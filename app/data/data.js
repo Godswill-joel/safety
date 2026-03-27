@@ -22,7 +22,7 @@ export const navLinks = [
   { name: "Locations", href: "/locations" },
   { name: "Projects", href: "/projects" },
   { name: "Blog", href: "/blog" },
-  { name: 'Contact Us', href: '/Page/contact' },
+  { name: 'Contact Us', href: '/contact' },
 ];
 
 export const footerData = {

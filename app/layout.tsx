@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Playfair_Display, DM_Sans } from "next/font/google";
 import ScrollToTop from "./components/Scrollto";
 
 const geistSans = Geist({
@@ -14,6 +14,17 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
 
 export const metadata: Metadata = {
   title: "Safety Bridge LTD",
@@ -28,7 +39,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased' ${playfair.variable} ${dmSans.variable}`}
     >
       <body className="min-h-full flex flex-col">
         <>
