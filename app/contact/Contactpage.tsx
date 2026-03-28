@@ -100,10 +100,10 @@ export default function Page() {
 
                 <div className="relative z-10 px-6 sm:px-10 lg:px-16 max-w-7xl w-full mx-auto">
                     <Float>
-                        <p className="font-body text-xs uppercase tracking-[0.25em] text-orange-600 mb-3">
+                        <p className="font-body text-xl uppercase tracking-[0.25em] text-orange-600 mb-3">
                             Safety Bridge LTD
                         </p>
-                        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-white leading-[1.05] mb-5">
+                        <h1 className="font-display text-6xl sm:text-7xl md:text-8xl font-black text-white leading-[1.05] mb-5">
                             Let's <em className="text-orange-600 not-italic">Talk</em>
                         </h1>
                         <p className="font-body text-gray-300 text-base sm:text-lg max-w-lg leading-relaxed">

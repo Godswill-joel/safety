@@ -99,7 +99,7 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <button
-            onClick={() => handleNavClick("/Page/contact")}
+            onClick={() => handleNavClick("/contact")}
             className="hidden md:inline-flex items-center text-[12px] font-semibold uppercase tracking-widest bg-orange-600 hover:bg-white hover:text-orange-600 text-white px-5 py-2.5 rounded-md border border-orange-600 transition-all duration-300 cursor-pointer"
           >
             Contact Us
@@ -261,7 +261,7 @@ export default function Navbar() {
         >
           <button
             onClick={() => handleNavClick("/contact")}
-            className="w-full py-3.5 bg-orange-600 hover:bg-blue-700 active:scale-[0.98] text-white text-[12px] font-semibold uppercase tracking-[0.12em] rounded-lg shadow-lg shadow-orange-600/20 transition-all duration-300 cursor-pointer"
+            className="w-full py-3.5 text-white bg-orange-600 hover:bg-white active:scale-[0.98] hover:text-orange-600 text-[12px] font-semibold uppercase tracking-[0.12em] rounded-lg shadow-lg shadow-orange-600/20 transition-all duration-300 cursor-pointer"
           >
             Contact Us
           </button>
