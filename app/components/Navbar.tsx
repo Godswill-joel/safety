@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { ChevronDown, X, Phone, MapPin, Menu } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { navLinks } from "../data/data";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setScrolled] = useState(false);
@@ -37,11 +38,10 @@ export default function Navbar() {
     <>
       {/* ── NAVBAR BAR ── */}
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled
+        className={`fixed w-full z-50 transition-all duration-300 ${isScrolled
             ? "bg-black/95 backdrop-blur-md shadow-[0_1px_0_rgba(255,255,255,0.06)] py-3"
             : "bg-transparent py-5"
-        }`}
+          }`}
       >
         <div className="max-w-8xl mx-auto px-5 sm:px-8 flex items-center justify-between">
 
@@ -50,7 +50,8 @@ export default function Navbar() {
             onClick={() => handleNavClick("/")}
             className="text-2xl font-bold tracking-tight text-white cursor-pointer"
           >
-            Safety<span className="text-blue-500">Bridge</span>
+            <Link href={"/home"}>Safety<span className="text-orange-600">Bridge</span></Link>
+
           </button>
 
           {/* ── DESKTOP LINKS ── */}
@@ -69,9 +70,8 @@ export default function Navbar() {
                   {link.children && (
                     <ChevronDown
                       size={13}
-                      className={`transition-transform duration-300 ${
-                        dropdownOpen === link.name ? "rotate-180 text-blue-400" : ""
-                      }`}
+                      className={`transition-transform duration-300 ${dropdownOpen === link.name ? "rotate-180 text-orange-600" : ""
+                        }`}
                     />
                   )}
                 </button>
@@ -98,7 +98,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <button
             onClick={() => handleNavClick("/Page/contact")}
-            className="hidden md:inline-flex items-center text-[12px] font-semibold uppercase tracking-widest bg-blue-600 hover:bg-white hover:text-blue-600 text-white px-5 py-2.5 rounded-md border border-blue-600 transition-all duration-300 cursor-pointer"
+            className="hidden md:inline-flex items-center text-[12px] font-semibold uppercase tracking-widest bg-orange-600 hover:bg-white hover:text-orange-600 text-white px-5 py-2.5 rounded-md border border-orange-600 transition-all duration-300 cursor-pointer"
           >
             Contact Us
           </button>
@@ -110,25 +110,22 @@ export default function Navbar() {
             className="md:hidden flex flex-col justify-center gap-[5px] w-9 h-9 p-1 cursor-pointer"
           >
             <span
-              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${
-                isMobileMenuOpen
+              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${isMobileMenuOpen
                   ? "w-[22px] translate-y-[6.5px] rotate-45"
                   : "w-[22px]"
-              }`}
+                }`}
             />
             <span
-              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 ${
-                isMobileMenuOpen
+              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 ${isMobileMenuOpen
                   ? "opacity-0 scale-x-0"
                   : "w-[16px] ml-[6px]"
-              }`}
+                }`}
             />
             <span
-              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${
-                isMobileMenuOpen
+              className={`block h-[1.5px] bg-white rounded-full transition-all duration-300 origin-center ${isMobileMenuOpen
                   ? "w-[22px] -translate-y-[6.5px] -rotate-45"
                   : "w-[22px]"
-              }`}
+                }`}
             />
           </button>
         </div>
@@ -137,18 +134,16 @@ export default function Navbar() {
       {/* ── BACKDROP ── */}
       <div
         onClick={closeMenu}
-        className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
-          isMobileMenuOpen
+        className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
-        }`}
+          }`}
       />
 
       {/* ── DRAWER PANEL ── */}
       <div
-        className={`fixed top-0 right-0 bottom-0 z-[70] w-[min(85vw,340px)] bg-[#0d0d0d] border-l border-white/[0.06] flex flex-col transition-transform duration-[420ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
-          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 bottom-0 z-[70] w-[min(85vw,340px)] bg-[#0d0d0d] border-l border-white/[0.06] flex flex-col transition-transform duration-[420ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Drawer Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-white/[0.06] flex-shrink-0">
@@ -196,11 +191,10 @@ export default function Navbar() {
                 {link.children && (
                   <ChevronDown
                     size={16}
-                    className={`transition-all duration-300 flex-shrink-0 ${
-                      dropdownOpen === link.name
+                    className={`transition-all duration-300 flex-shrink-0 ${dropdownOpen === link.name
                         ? "rotate-180 text-blue-400"
                         : "text-gray-600 group-hover:text-gray-300"
-                    }`}
+                      }`}
                   />
                 )}
               </button>
