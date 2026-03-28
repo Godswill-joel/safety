@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+
 import { useState, useEffect } from "react";
-import { ChevronDown, X, Phone, MapPin, Menu } from "lucide-react";
+import { ChevronDown, X, Phone, MapPin } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { navLinks } from "../data/data";
 import Link from "next/link";

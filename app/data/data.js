@@ -1,26 +1,26 @@
-import { 
-  faFacebookF, 
-  faTwitter, 
-  faLinkedinIn, 
-  faInstagram 
+import {
+  faFacebookF,
+  faTwitter,
+  faLinkedinIn,
+  faInstagram
 } from '@fortawesome/free-brands-svg-icons';
 
 
 export const navLinks = [
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Consultancy", href: "/consultancy",
-    children:[
-      {name:"HSE Consultancy and Trainings Services", href:"/HSE"},
-      {name:"Environmental & Wastes Mgt services ", href:"/wastemgt"}
+  {
+    name: "Services", href: "/services",
+    children: [
+      { name: "HSE Consultancy and Trainings Services", href: "/HSE" },
+      { name: "Environmental & Wastes Mgt services ", href: "/wastemgt" }
     ],
-   },
-  { name: "Courses", href: "/courses", children:[
-    {name:"Facility Management services.", href:"/facilitymanagement"},
-    {name:" Fire Fighting & Protection System Installation", href:"/Firefighting"},
-  ] },
-  { name: "Locations", href: "/locations" },
-  { name: "Projects", href: "/projects" },
+  },
+  {
+    name: "Courses", href: "/courses", children: [
+      { name: "Facility Management services.", href: "/facilitymanagement" },
+      { name: " Fire Fighting & Protection System Installation", href: "/Firefighting" },
+    ]
+  },
   { name: "Blog", href: "/blog" },
   { name: 'Contact Us', href: '/contact' },
 ];
@@ -44,17 +44,13 @@ export const footerData = {
     title: 'Quick Menu',
     links: [
       { name: 'About Us', href: '/about' },
-      { name: 'Projects', href: '/projects' },
       { name: 'Courses', href: '/courses' },
       { name: 'Contact Us', href: '/contact' },
       { name: 'Training Calendar', href: '/training-calendar' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
-      { name: 'Terms & Conditions', href: '/terms' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'News', href: '/news' },
     ]
   },
- socialMedia: [
+  socialMedia: [
     { name: 'Facebook', icon: faFacebookF, href: 'https://facebook.com/kevrongroup' },
     { name: 'Twitter', icon: faTwitter, href: 'https://twitter.com/kevrongroup' },
     { name: 'LinkedIn', icon: faLinkedinIn, href: 'https://linkedin.com/company/kevrongroup' },
