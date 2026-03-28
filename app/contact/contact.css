@@ -16,7 +16,7 @@
 .contact-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(38,97,233,0.12);
-  border-color: rgba(38,97,233,0.3);
+  border-color: #e95c1f;;
 }
 
 /* Inputs */
@@ -29,7 +29,7 @@
   outline: none;
 }
 .form-input:focus {
-  border-color: #2661E9;
+  border-color: #e95c1f;
   background: #FFFFFF;
   box-shadow: 0 0 0 4px rgba(38,97,233,0.08);
 }
@@ -39,7 +39,7 @@
 .accent-line {
   width: 64px;
   height: 3px;
-  background: linear-gradient(90deg, #2661E9, #60a5fa);
+  background: linear-gradient(90deg, #e95726, #ec5938);
   border-radius: 2px;
 }
 
@@ -61,7 +61,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: #2661E9;
+  background: #e95c1f;
   transform: translateX(-101%);
   transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
 }
@@ -75,7 +75,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #2661E9;
+  background: #e95c1f;
   color: white;
   font-family: 'Playfair Display', serif;
   font-size: 14px;

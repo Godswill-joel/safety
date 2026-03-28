@@ -100,11 +100,11 @@ export default function Page() {
 
                 <div className="relative z-10 px-6 sm:px-10 lg:px-16 max-w-7xl w-full mx-auto">
                     <Float>
-                        <p className="font-body text-xs uppercase tracking-[0.25em] text-blue-300 mb-3">
+                        <p className="font-body text-xs uppercase tracking-[0.25em] text-orange-600 mb-3">
                             Safety Bridge LTD
                         </p>
                         <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-white leading-[1.05] mb-5">
-                            Let's <em className="text-blue-400 not-italic">Talk</em>
+                            Let's <em className="text-orange-600 not-italic">Talk</em>
                         </h1>
                         <p className="font-body text-gray-300 text-base sm:text-lg max-w-lg leading-relaxed">
                             We're here to answer your questions and guide you toward the right course for your career.
@@ -127,8 +127,8 @@ export default function Page() {
                                 key={id}
                                 className={`contact-card rounded-2xl p-6 animate-slide-up delay-${i + 1}`}
                             >
-                                <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center mb-5">
-                                    <Icon size={19} className="text-[#2661E9]" />
+                                <div className="w-11 h-11 rounded-xl bg-orange-50 flex items-center justify-center mb-5">
+                                    <Icon size={19} className="text-[#e95c1f]" />
                                 </div>
                                 <p className="font-body text-[11px] uppercase tracking-[0.18em] text-gray-400 mb-1">{label}</p>
                                 <p className="font-body text-gray-800 font-medium text-sm leading-snug">
@@ -149,8 +149,8 @@ export default function Page() {
                         <div className="lg:col-span-2 space-y-10">
                             <div>
                                 <div className="flex items-center gap-3 mb-6">
-                                    <div className="w-12 h-[2px] bg-blue-400"></div>
-                                    <p className="font-body text-[11px] text-blue-400 uppercase tracking-[0.22em]">Get In Touch</p>
+                                    <div className="w-12 h-[2px] bg-orange-600"></div>
+                                    <p className="font-body text-[11px] text-orange-600 uppercase tracking-[0.22em]">Get In Touch</p>
                                 </div>
                                 <h2 className="font-display text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
                                     Send Us<br />a Message
