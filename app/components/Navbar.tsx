@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Navbar() {
   const [isScrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
+  const [dropdownOpen, setDropdownOpen] = useState<string | null> (null);
 
   const router = useRouter();
 
@@ -23,7 +23,7 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [isMobileMenuOpen]);
 
-  const handleNavClick = (path) => {
+  const handleNavClick = (path: string) => {
     setIsMobileMenuOpen(false);
     setDropdownOpen(null);
     router.push(path);
@@ -151,7 +151,7 @@ export default function Navbar() {
             onClick={() => handleNavClick("/")}
             className="text-lg font-bold tracking-tight text-white cursor-pointer"
           >
-            Safety<span className="text-blue-500">Bridge</span>
+            Safety<span className="text-orange-600">Bridge</span>
           </button>
           <button
             onClick={closeMenu}
@@ -192,7 +192,7 @@ export default function Navbar() {
                   <ChevronDown
                     size={16}
                     className={`transition-all duration-300 flex-shrink-0 ${dropdownOpen === link.name
-                        ? "rotate-180 text-blue-400"
+                        ? "rotate-180 text-orange-400"
                         : "text-gray-600 group-hover:text-gray-300"
                       }`}
                   />
@@ -211,7 +211,7 @@ export default function Navbar() {
                     <button
                       key={child.name}
                       onClick={() => handleNavClick(child.href)}
-                      className="group w-full text-left px-6 pl-10 py-3.5 text-[20px] text-gray-500 border-b border-white/[0.03] hover:text-blue-400 hover:bg-white/[0.02] transition-all duration-200 cursor-pointer"
+                      className="group w-full text-left px-6 pl-10 py-3.5 text-[20px] text-gray-500 border-b border-white/[0.03] hover:text-orange-600 hover:bg-white/[0.02] transition-all duration-200 cursor-pointer"
                     >
                       <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
                         {child.name}
@@ -238,11 +238,11 @@ export default function Navbar() {
           </p>
           <div className="space-y-2.5">
             <div className="flex items-center gap-3 text-[18px] text-gray-500">
-              <MapPin size={13} className="text-blue-500 flex-shrink-0" />
+              <MapPin size={13} className="text-orange-600 flex-shrink-0" />
               <span>Apapa, Lagos State</span>
             </div>
             <div className="flex items-center gap-3 text-[18px] text-gray-500">
-              <Phone size={13} className="text-blue-500 flex-shrink-0" />
+              <Phone size={13} className="text-orange-600 flex-shrink-0" />
               <span>+234 — — — — — —</span>
             </div>
           </div>
@@ -258,8 +258,8 @@ export default function Navbar() {
           }}
         >
           <button
-            onClick={() => handleNavClick("/Page/contact")}
-            className="w-full py-3.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white text-[12px] font-semibold uppercase tracking-[0.12em] rounded-lg shadow-lg shadow-blue-600/20 transition-all duration-300 cursor-pointer"
+            onClick={() => handleNavClick("/contact")}
+            className="w-full py-3.5 bg-orange-600 hover:bg-blue-700 active:scale-[0.98] text-white text-[12px] font-semibold uppercase tracking-[0.12em] rounded-lg shadow-lg shadow-orange-600/20 transition-all duration-300 cursor-pointer"
           >
             Contact Us
           </button>
