@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { footerData } from '../data/data';
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Mail, Phone, Send } from 'lucide-react';
 
@@ -11,11 +11,10 @@ import { Mail, Phone, Send } from 'lucide-react';
 export default function Footer() {
     const [email, setEmail] = useState('');
 
-    const handleSubscribe = (e: React.FormEvent) => {
+    const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!email) return;
-
-        // Handle newsletter subscription
+    
         console.log('Subscribing:', email);
         setEmail('');
     };
