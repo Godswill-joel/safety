@@ -7,20 +7,9 @@ import {
 
 
 export const navLinks = [
+  { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  {
-    name: "Services", href: "/services",
-    children: [
-      { name: "HSE Consultancy and Trainings Services", href: "/HSE" },
-      { name: "Environmental & Wastes Mgt services ", href: "/wastemgt" }
-    ],
-  },
-  {
-    name: "Courses", href: "/courses", children: [
-      { name: "Facility Management services.", href: "/facilitymanagement" },
-      { name: " Fire Fighting & Protection System Installation", href: "/Firefighting" },
-    ]
-  },
+  {name: "Services", href: "/services",},
   { name: "Blog", href: "/blog" },
   { name: 'Contact Us', href: '/contact' },
 ];
