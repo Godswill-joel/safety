@@ -44,7 +44,7 @@ export default function HeroSection({
       <div className="relative z-10 px-6 sm:px-10 lg:px-16 max-w-7xl w-full mx-auto">
         <div>
           {tag && (
-            <p className="font-body text-xs uppercase tracking-[0.25em] text-orange-600 mb-3">
+            <p className="font-body text-xl uppercase tracking-[0.25em] text-orange-600 mb-3">
               {tag}
             </p>
           )}
@@ -52,7 +52,7 @@ export default function HeroSection({
           <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-black text-white leading-[1.05] mb-5">
             {title}{" "}
             {highlight && (
-              <em className="text-orange-600 not-italic">{highlight}</em>
+              <em className="text-orange-600  not-italic">{highlight}</em>
             )}
           </h1>
 

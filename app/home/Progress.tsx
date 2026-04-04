@@ -47,26 +47,26 @@ const HouseHandIcon = () => (
 const steps = [
   {
     icon: <SearchDocIcon />,
-    title: "Choose Your Service",
-    desc: "Lorem ipsum dolor sit amet consecte.",
+    title: "Security Systems Installation & Maintenance",
+    desc: "Advanced security solutions to protect assets and personnel.",
     num: "01.",
   },
   {
     icon: <CalendarIcon />,
-    title: "Make Appointment",
-    desc: "Lorem ipsum dolor sit amet consecte.",
+    title: "Personal Protective Equipment (PPE) Supplies",
+    desc: "Supply of high-quality PPE to ensure workplace safety.",
     num: "02.",
   },
   {
     icon: <TargetIcon />,
-    title: "Go To Your Place",
-    desc: "Lorem ipsum dolor sit amet consecte.",
+    title: "Technical Manpower Supplies",
+    desc: "Provision of skilled technical personnel for various industrial needs.",
     num: "03.",
   },
   {
     icon: <HouseHandIcon />,
-    title: "Enjoy Your Service",
-    desc: "Lorem ipsum dolor sit amet consecte.",
+    title: "Environmental & Waste Management Services",
+    desc: "Professional waste management and environmental protection solutions tailored to industry standards.",
     num: "04.",
   },
 ];

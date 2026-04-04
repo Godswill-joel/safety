@@ -1,26 +1,58 @@
 "use client";
 
-import { useEffect, useRef, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-/* ── Animated counter hook ── */
+/* ── Counter ── */
 function useCounter(target: number, duration: number, active: boolean) {
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     if (!active) return;
+
     let start: number | null = null;
+
     const step = (ts: number) => {
       if (!start) start = ts;
       const progress = Math.min((ts - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
+
       setCount(Math.round(eased * target));
+
       if (progress < 1) requestAnimationFrame(step);
     };
+
     requestAnimationFrame(step);
   }, [active, target, duration]);
+
   return count;
 }
 
+/* ── SAME animation system as other page ── */
+const slideLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+};
+
+const slideUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+/* ── UI ── */
 const features = [
   "Flexible & Cost-Effective",
   "VIP & Annual Pass Programs",
@@ -32,131 +64,126 @@ const features = [
 ];
 
 const HardHatIcon = () => (
-  <svg viewBox="0 0 64 64" fill="none" stroke="#ea580c" strokeWidth="1.8" className="w-9 h-9 md:w-11 md:h-11">
+  <svg viewBox="0 0 64 64" fill="none" stroke="#ea580c" strokeWidth="1.8" className="w-10 h-10">
     <path d="M12 36c0-11.046 8.954-20 20-20s20 8.954 20 20" />
     <rect x="8" y="36" width="48" height="8" rx="2" />
-    <path d="M20 44v4M44 44v4" strokeLinecap="round" />
-    <ellipse cx="22" cy="30" rx="5" ry="3.5" />
-    <ellipse cx="42" cy="30" rx="5" ry="3.5" />
-    <path d="M27 30h10" />
   </svg>
 );
 
 const Chevron = () => (
-  <svg viewBox="0 0 10 10" fill="#ea580c" className="w-[10px] h-[10px] mt-[4px] flex-shrink-0">
+  <svg viewBox="0 0 10 10" fill="#ea580c" className="w-[10px] h-[10px] mt-[4px]">
     <path d="M2 1l6 4-6 4V1z" />
   </svg>
 );
 
 export default function Aboutfiles() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
   const [active, setActive] = useState(false);
   const count = useCounter(7, 2200, active);
 
+  /* trigger like your main page */
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
           setActive(true);
-          observer.disconnect();
+          obs.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.3 }
     );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => observer.disconnect();
+
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full bg-white py-16 md:py-20 lg:py-28"
-      style={{ fontFamily: "'Barlow', sans-serif" }}
-    >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-start gap-10 lg:gap-20">
-        <div className="flex-1 w-full">
-          <p className="text-orange-600 font-bold text-xs md:text-sm tracking-wide mb-3 md:mb-4">
-            About Damqar
-          </p>
-          <h2
-            className="text-gray-900 font-black leading-tight mb-4 md:mb-6 text-3xl sm:text-4xl md:text-5xl"
-            style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
-          >
+    <section ref={ref} className="w-full bg-white py-20">
+      <div className="max-w-[1200px] mx-auto px-6 flex flex-col lg:flex-row gap-20">
+
+        {/* LEFT (same animation style) */}
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="flex-1"
+        >
+          <motion.p variants={slideLeft} className="text-orange-600 mb-3 text-xl font-bold">
+            About Safety Bridge
+          </motion.p>
+
+          <motion.h2 variants={slideLeft} className="text-4xl text-black mb-5 font-semi-bold">
             We Are Always Ready To Help Your Problems
-          </h2>
-          <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-6 md:mb-9 max-w-full md:max-w-[490px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-          <div className="flex flex-col sm:flex-row items-start gap-6 mb-8 md:mb-10">
+          </motion.h2>
 
-            {/* Experience card */}
-            <div className="w-full sm:w-[180px] md:w-[200px] bg-[#1c1c1c] p-6 text-center flex flex-col items-center">
+          <motion.p variants={slideUp} className="text-gray-500 mb-8 max-w-[490px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+          </motion.p>
+
+          {/* Card + features */}
+          <motion.div variants={slideLeft} className="flex gap-6 mb-10">
+
+            {/* Counter */}
+            <motion.div variants={slideUp} className="bg-black text-white p-6 text-center">
               <HardHatIcon />
-
-              <div className="flex items-end gap-1 mt-4 mb-2">
-                <span className="text-white font-black text-4xl md:text-5xl">
-                  {count}
-                </span>
-                <span className="text-orange-500 font-black text-2xl md:text-3xl mb-1">
-                  +
-                </span>
+              <div className="flex justify-center mt-4">
+                <span className="text-5xl font-bold">{count}</span>
+                <span className="text-orange-500 text-3xl">+</span>
               </div>
-
-              <p className="text-gray-400 text-xs md:text-sm">
-                Years Experience
-              </p>
-            </div>
+              <p className="text-gray-400 text-sm">Years Experience</p>
+            </motion.div>
 
             {/* Features */}
-            <ul className="flex flex-col justify-center gap-2">
+            <ul className="flex flex-col gap-2">
               {features.map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
+                <motion.li
+                  key={i}
+                  variants={slideRight} // 👈 matches other page
+                  className="flex gap-2 text-gray-700"
+                >
                   <Chevron />
-                  <span className="text-gray-700 text-sm md:text-[15px] leading-snug">
-                    {item}
-                  </span>
-                </li>
+                  {item}
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact */}
-          <div className="flex items-center gap-4 md:gap-5">
-
-            <div className="relative w-[55px] h-[55px] md:w-[70px] md:h-[70px] rounded-full overflow-hidden outline outline-2 md:outline-3 outline-orange-600 outline-offset-2">
+          <motion.div variants={slideLeft} className="flex items-center gap-4">
+            <div className="relative w-[70px] h-[70px] rounded-full overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=200&q=80"
-                alt="Firefighter avatar"
+                alt=""
                 fill
                 className="object-cover"
-                sizes="70px"
               />
             </div>
 
             <div>
-              <p className="text-gray-400 text-xs md:text-sm mb-1">
-                We Are Available 24 Hours
-              </p>
-              <p className="text-gray-900 font-extrabold text-base md:text-lg">
-                For Emergency :{" "}
-                <span className="text-orange-600">121-0000-200</span>
+              <p className="text-black text-xl">We Are Available 24 Hours</p>
+              <p className="font-bold text-2xl text-black">
+                For Emergency: <span className="text-orange-600 text-xl">080-3371-3326</span>
               </p>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] lg:w-[480px] lg:h-[580px] overflow-hidden shadow-xl">
+        {/* RIGHT IMAGE (same as main page) */}
+        <motion.div
+          variants={slideRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="w-full lg:w-[480px] h-[500px] relative"
+        >
           <Image
             src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=900&q=80"
-            alt="Firefighters on duty"
+            alt=""
             fill
             className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 480px"
-            priority
           />
-        </div>
+        </motion.div>
 
       </div>
     </section>
