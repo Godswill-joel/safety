@@ -57,6 +57,7 @@ export const SafetyBridgeData = [
   "Security Systems Installation and maintenance.",
   "Personal Protective Equipment (PPE) Supplies",
   "Technical Manpower Supplies",
+  "Interested in buying materials"
 ]
 
 export const Safety = [

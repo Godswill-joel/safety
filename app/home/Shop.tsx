@@ -28,19 +28,19 @@ const categories = [
     alt: "Worker in high visibility vest on construction site",
   },
   {
-      id: 5,
-      name: "Protective Equipment",
-      image:
+    id: 5,
+    name: "Protective Equipment",
+    image:
       "https://res.cloudinary.com/dzhpdvoqd/image/upload/ar_1:1,b_gen_fill,c_pad/e_enhance/r_20/shop4_pb6cmr.webp",
-      alt: "Bucket of protective equipment and tools",
-    },
-    {
-      id: 4,
-      name: "Fall Protection",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
-      alt: "Fall protection harness and carabiner clips",
-    },
+    alt: "Bucket of protective equipment and tools",
+  },
+  {
+    id: 4,
+    name: "Fall Protection",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
+    alt: "Fall protection harness and carabiner clips",
+  },
 ];
 
 export default function ShopByCategories() {
@@ -76,11 +76,10 @@ export default function ShopByCategories() {
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${
-              canScrollLeft
-                ? "border-gray-400 text-gray-700 hover:bg-gray-100"
-                : "border-gray-200 text-gray-300 cursor-not-allowed"
-            }`}
+            className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${canScrollLeft
+              ? "border-gray-400 text-gray-700 hover:bg-gray-100"
+              : "border-gray-200 text-gray-300 cursor-not-allowed"
+              }`}
             aria-label="Scroll left"
           >
             ‹
@@ -88,11 +87,10 @@ export default function ShopByCategories() {
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${
-              canScrollRight
-                ? "border-gray-400 text-gray-700 hover:bg-gray-100"
-                : "border-gray-200 text-gray-300 cursor-not-allowed"
-            }`}
+            className={`w-9 h-9 rounded-full border flex items-center justify-center transition-colors ${canScrollRight
+              ? "border-gray-400 text-gray-700 hover:bg-gray-100"
+              : "border-gray-200 text-gray-300 cursor-not-allowed"
+              }`}
             aria-label="Scroll right"
           >
             ›
@@ -113,7 +111,7 @@ export default function ShopByCategories() {
         {categories.map((cat) => (
           <a
             key={cat.id}
-            href="#"
+            href="/contact?course=Interested%20in%20buying%20materials"
             className="relative flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] h-[340px] md:h-[380px] overflow-hidden group cursor-pointer rounded-sm"
           >
             {/* Image */}
