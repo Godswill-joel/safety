@@ -170,7 +170,7 @@ export default function AboutSection() {
                 <p className="text-gray-900 font-bold text-sm sm:text-lg md:text-xl">
                   For Emergency:{" "}
                   <span className="text-orange-600 text-sm sm:text-base md:text-lg">
-                    080-3371-3326
+                   +234 201 342 4578
                   </span>
                 </p>
               </div>

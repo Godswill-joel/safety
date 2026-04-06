@@ -27,7 +27,7 @@ const fields: Field[] = [
 const contacts = [
     { id: "email", Icon: Mail, label: "Email", value: "asuquog588@gmail.com" },
     { id: "voice", Icon: Phone, label: "Voice Call", value: "" },
-    { id: "whatsapp", Icon: MessageCircle, label: "WhatsApp", value: "08033713324" },
+    { id: "whatsapp", Icon: MessageCircle, label: "WhatsApp", value: "234 201 342 4578" },
     { id: "address", Icon: MapPin, label: "Office", value: "" },
 ];
 
