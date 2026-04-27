@@ -66,7 +66,7 @@ const steps = [
   {
     icon: <HouseHandIcon />,
     title: "Environmental & Waste Management Services",
-    desc: "Professional waste management and environmental protection solutions tailored to industry standards.",
+    desc: "Professional  environmental protection solutions tailored to industry standards.",
     num: "04.",
   },
 ];
@@ -91,7 +91,7 @@ export default function WorkingProcess() {
             className="object-cover object-center"
             sizes="100vw"
           />
-          {/* Very dark overlay — makes it near-black like the design */}
+         
           <div className="absolute inset-0 bg-black/82" />
         </div>
 
@@ -101,7 +101,7 @@ export default function WorkingProcess() {
             className="text-orange-500 font-bold text-[13px] tracking-[0.18em] uppercase mb-4"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            How We Works
+            How We Work
           </p>
           <h2
             className="text-white font-black text-[46px] leading-tight mb-5"
@@ -123,7 +123,7 @@ export default function WorkingProcess() {
               <div className="absolute top-0 left-0 right-0 h-[4px] bg-orange-600 z-10" />
 
               {/* Card body */}
-              <div className="bg-white pt-10 pb-8 px-8 flex flex-col items-start justify-between min-h-[220px] relative overflow-hidden">
+              <div className="bg-white pt-10 pb-8 px-8 flex flex-col items-start justify-between min-h-[370px] relative overflow-hidden">
                 {/* Icon */}
                 <div className="text-orange-600 mb-6">
                   {step.icon}
