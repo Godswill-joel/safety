@@ -32,9 +32,8 @@ export const footerData = {
     title: 'Quick Menu',
     links: [
       { name: 'About Us', href: '/about' },
-      { name: 'Courses', href: '/courses' },
+      { name: 'Courses', href: '/services' },
       { name: 'Contact Us', href: '/contact' },
-      { name: 'Training Calendar', href: '/training-calendar' },
       { name: 'Privacy Policy', href: '/privacy-policy' },
     ]
   },

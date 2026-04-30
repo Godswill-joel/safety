@@ -186,7 +186,7 @@ export default function WhyChooseUs() {
 
             {/* CTA */}
             <a
-              href="#"
+              href="/contact"
               className="inline-block bg-orange-600 hover:bg-orange-700 text-white font-bold text-[15px] tracking-wide px-10 py-5 transition-colors duration-200"
               style={{ fontFamily: "'Barlow', sans-serif" }}
             >
